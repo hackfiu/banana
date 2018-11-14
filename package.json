@@ -1,0 +1,20 @@
+{
+  "name": "banana",
+  "version": "1.0.0",
+  "description": "A sweet mailer for a sweet hackathon registration system.",
+  "main": "lib/Banana.js",
+  "license": "MIT",
+  "dependencies": {
+    "@types/email-templates": "^3.5.0",
+    "@types/express-handlebars": "^0.0.30",
+    "@types/nodemailer": "^4.6.5",
+    "nodemailer": "^4.6.8",
+    "nodemailer-express-handlebars": "^3.0.0"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^3.1.6"
+  }
+}
