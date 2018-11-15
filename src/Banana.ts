@@ -1,9 +1,9 @@
-import * as path from "path";
 import { createTransport, Transporter } from "nodemailer";
 import * as handlebars from "express-handlebars";
 import * as nodemailerHandlebars from "nodemailer-express-handlebars";
 
 import { Config, Mail } from "./types";
+import { send } from "email-templates";
 
 export class Banana {
   private smtpTransport: Transporter;
@@ -25,29 +25,17 @@ export class Banana {
   }
 
   public async send(mailList: Array<Mail>) {
-    try {
-      await Promise.all(
-        mailList.map(
-          message =>
-            new Promise(async (resolve, reject) => {
-              try {
-                const mail = {
-                  from: this.email,
-                  to: message.to,
-                  subject: message.subject,
-                  template: message.template,
-                  context: message.context
-                };
-                await this.smtpTransport.sendMail(mail);
-                resolve();
-              } catch (e) {
-                reject(e);
-              }
-            })
-        )
-      );
-    } catch (err) {
-      throw err;
-    }
+    return Promise.all(
+      mailList.map(message => {
+        const mail = {
+          from: this.email,
+          to: message.to,
+          subject: message.subject,
+          template: message.template,
+          context: message.context
+        };
+        return this.smtpTransport.sendMail(mail);
+      })
+    );
   }
 }
