@@ -6,14 +6,14 @@ Banana is a simple mailing library meant to reduce overhead when developing back
 
 First, you'll want an instance of a Banana, so just hit it with a little bit of this:
 ```javascript
-import { Banana } from 'banana';
+import { Banana } from 'banana-mail';
 
 const banana = new Banana({
   service: 'gmail',
   templatePath: 'src/templates',
   auth: {
     user: 'foo@bar.edu',
-    pass: 'password'
+    pass: 'password',
   },
 });
 ```
