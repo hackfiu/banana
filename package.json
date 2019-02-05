@@ -1,7 +1,7 @@
 {
-  "name": "banana",
+  "name": "@hackfiu/banana",
   "version": "1.0.0",
-  "description": "A sweet mailer for a sweet hackathon registration system.",
+  "description": "A sweet mailer for a sweet hackathon registration system 🍌",
   "main": "lib/Banana.js",
   "license": "MIT",
   "dependencies": {
@@ -11,9 +11,15 @@
     "nodemailer": "^4.6.8",
     "nodemailer-express-handlebars": "^3.0.0"
   },
+  "repository": "hackfiu/banana",
   "scripts": {
     "build": "tsc"
   },
+  "files": ["src/"],
+  "bugs": {
+    "url": "https://github.com/hackfiu/banana/issues"
+  },
+  "homepage": "https://hackfiu.com",
   "devDependencies": {
     "typescript": "^3.1.6"
   }
